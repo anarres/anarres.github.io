@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.5">
+<link rel="icon" href="FIXME" type="image/svg" sizes="64x64">
+<title>An alien yelling about stuff</title>
+<meta name="description" content="Choose your alien, choose your color, yell about whatever is on your mind, and generate an image that you can post on social media!">
+<link type="text/css" media="screen" rel="stylesheet" href="anAlienYelling.css">
+<script type="text/javascript" src="anAlienYelling.js"></script>
+
+</head>
+
+<body onload="init()">
+
+<div class="arrowWrapper">
+    <a href="#top" title="Back to top" class="backToTop">&#8593;</a>
+</div>
+
+<h1>An alien yelling about stuff</h1>
+
+<h2>Select an alien:</h2>
+
+<ul>
+    <li>
+        <input type="radio" name="alien" id="alien1" checked>
+        <label for="alien1">
+            <img src="images/alien1.svg" width="80px" height="80px" id="alien1img" alt="green cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien2">
+        <label for="alien2">
+            <img src="images/alien2.svg" width="80px" height="80px" id="alien2img" alt="red cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien3">
+        <label for="alien3">
+            <img src="images/alien3.svg" width="80px" height="80px" id="alien3img" alt="light grey cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien4">
+        <label for="alien4">
+            <img src="images/alien4.svg" width="80px" height="80px" id="alien4img" alt="pinky-beige cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien5">
+        <label for="alien5">
+            <img src="images/alien5.svg" width="80px" height="80px" id="alien5img" alt="turquoise cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien6" id="alien6img">
+        <label for="alien6">
+            <img src="images/alien6.svg" width="80px" height="80px" id="alien6img" alt="yellow-green cartoon alien">
+        </label>
+    </li>
+
+    <li>
+        <input type="radio" name="alien" id="alien7" id="alien7img">
+        <label for="alien7">
+            <img src="images/alien7.svg" width="80px" height="80px" id="alien7img" alt="purple cartoon alien">
+        </label>
+    </li>
+</ul>
+
+<section id="colors">
+
+<h2>Select a background color:</h2>
+
+<ul>
+    <li>
+        <input type="radio" name="bgColor" id="bgColor1" checked>
+        <label for="bgColor1" id="bgColor1Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor2">
+        <label for="bgColor2" id="bgColor2Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor3">
+        <label for="bgColor3" id="bgColor3Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor4">
+        <label for="bgColor4" id="bgColor4Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor5">
+        <label for="bgColor5" id="bgColor5Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor6">
+        <label for="bgColor6" id="bgColor6Label"></label>
+    </li>
+
+    <li>
+        <input type="radio" name="bgColor" id="bgColor7">
+        <label for="bgColor7" id="bgColor7Label"></label>
+    </li>
+</ul>
+
+</section><!--#colors-->
+
+<section id="yell">
+
+<h2>Yell about stuff:</h2>
+
+<input 
+    id="text1"
+    type="text"
+    value="Hello I am an alien and today I would"
+    maxlength="45">
+
+<input 
+    id="text2"
+    type="text"
+    value="like to talk to you about..."
+    maxlength="45">
+
+<input 
+    id="text3"
+    type="text"
+    maxlength="45">
+
+<input 
+    id="text4"
+    type="text"
+    maxlength="45">
+
+<input 
+    id="text5"
+    type="text"
+    maxlength="45">
+
+<input 
+    id="text6"
+    type="text"
+    maxlength="45">
+
+</section>
+
+<section id="saveImage">
+
+<h2>Save your image:</h2>
+
+<p class="hint">
+Select PNG if you want to post your image on social media, since most websites don't allow SVG.
+</p>
+
+<p>
+    <input type="radio" name="imgFormat" id="imgFormatPNG" checked>
+    <label for="imgFormatPNG" id="imgFormatPNGLabel">PNG</label>
+
+    <input type="radio" name="imgFormat" id="imgFormatSVG">
+    <label for="imgFormatSVG" id="imgFormatSVGLabel">SVG</label>
+
+    <button id="generateImage">Generate image</button>
+
+    <div id="howToSaveWrapper" class="hidden">
+        <p id="howToSave" class="hint">
+            Right-click the image and then "Save as", or do whatever you would normally do to save an image.
+        </p>
+    </div>
+
+    <div id="imageGoesHere"></div>
+</p>
+
+</section>
+
+<section id="socialMedia" class="hidden">
+
+<h2>Post the image to your favourite social media website:</h2>
+
+<p class="hint">
+You can also copy and post this handy <strong>image description</strong> for people who have trouble seeing images:
+</p>
+
+<p id="imgDescription"></p>
+
+</section>
+
+<!--A hidden div where the SVG code can go before being either copied onto a canvas (for PNG image) or packaged into a dataURL (for SVG image)-->
+<div id="hiddenDiv"></div>
+
+<!--A hidden canvas used in the mysterious javascript process of turning an SVG image into a PNG-->
+<canvas id="hiddenCanvas">
+
+</body>
+
+</html>
