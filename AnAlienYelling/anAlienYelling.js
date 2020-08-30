@@ -98,34 +98,7 @@ getSVG = function() {
     return svg;
 };
 
-getAlienDesc = function() {
-    alienDesc = "cartoon alien";
-    if (getById("alien1img").checked) {
-        alienDesc = getById("alien1").alt;
-    }
-    else if (getById("alien2img").checked) {
-        alienDesc = getById("alien2").alt;
-    }
-    else if (getById("alien3img").checked) {
-        alienDesc = getById("alien3").alt;
-    }
-    else if (getById("alien4img").checked) {
-        alienDesc = getById("alien4").alt;
-    }
-    else if (getById("alien5img").checked) {
-        alienDesc = getById("alien5").alt;
-    }
-    else if (getById("alien6img").checked) {
-        alienDesc = getById("alien6").alt;
-    }
-    else if (getById("alien7img").checked) {
-        alienDesc = getById("alien7").alt;
-    }
-    return alienDesc
-};
-
 getDescription = function() {
-    alienDesc = getAlienDesc();
     t1 = getById("text1").value;
     t2 = getById("text2").value;
     t3 = getById("text3").value;
@@ -133,9 +106,8 @@ getDescription = function() {
     t5 = getById("text5").value;
     t6 = getById("text6").value;
     text = t1 + " " + t2 + " " + t3 + " " + t4 + " " + t5 + " " + t6;
-    template = 'Image description: A ALIEN--DESCRIPTION says: TEXT--GOES--HERE';
-    desc = template.replace("ALIEN--DESCRIPTION",alienDesc);
-    desc = desc.replace("TEXT--GOES--HERE",text);
+    template = 'Image description: A cartoon says: TEXT--GOES--HERE';
+    desc = template.replace("TEXT--GOES--HERE",text);
     return desc;
 };
 
