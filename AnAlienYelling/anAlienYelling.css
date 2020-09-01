@@ -2,18 +2,21 @@
     margin:0px;
     padding:0px;
 }
-body {
+html {
     color:#222;
     max-width:1000px;
     margin:0px auto;
-    padding-bottom:20px;
-    font-size:16px;
+    font-size:14px;
     font-family: sans-serif;
-    border-left:1px solid #ddd;
-    border-right:1px solid #ddd;
+    background-color:grey;
+}
+body {
+    padding:0px 10px;
+    background-color:#fff;
+
 }
 h1,h2,h3,p,aside,ul,ol,li {
-    margin:5px 10px;
+    margin:2px 0px;
     clear:both;
 }
 textarea, button, input {
@@ -21,8 +24,8 @@ textarea, button, input {
     font-family:serif;
     color:#444;
 }
-textarea, button {
-    margin:0px 10px;
+button {
+    margin:0px 4px;
     clear:both;
 }
 button {
@@ -34,10 +37,15 @@ h1,h2,h3 {
     font-size:1.5em;
 }
 h1 {
-    margin-top:30px;
-    margin-bottom:30px;
+    padding:15px 0px;
     text-align:center;
-    font-size:1.8em;
+    font-size:1.1em;
+    background-color:grey;
+    color:#eee;
+    width:400px;
+    max-width:100%;
+    margin:0px auto;
+    border-radius:0px 0px 15px 15px;
 }
 a.backToTop {
     position:fixed;
@@ -55,36 +63,35 @@ a.backToTop:hover {
 	opacity:1;
 }
 section {
-    padding-top:10px;
+    padding:8px 0px;
+    display:block;
     clear:both;
-}
-ul {
-    padding:0px 14px;
 }
 li {
     list-style:none;
     float:left;
-    margin:2px 8px;
+    margin:2px;
     clear:none;
 }
 section#colors label {
     width:40px;
-    height:25px;
+    height:30px;
     background-color:grey;
     border:1px solid #222;
     border-radius:2px;
     display:block;
     float:right;
-    margin-left:5px;
+    margin-left:4px;
+    margin-right:4px;
 }
 section#yell input {
-    margin:6px auto;
+    margin:2px auto;
     display:block;
     width:550px;
     max-width:90%;
 }
 section#saveImage input {
-    margin-left:10px;
+    margin-left:2px;
 }
 section#imagePreview h2 {
     float:left;
@@ -112,9 +119,10 @@ img#myImage {
     height:auto;
 }
 p#imgDescription {
-    padding:30px;
+    padding:20px;
     background-color:#ddd;
     border-radius:2px;
+    text-indent:10px;
 }
 #hiddenDiv, #hiddenCanvas {
     display:none;
@@ -126,3 +134,16 @@ p#imgDescription {
     width:50px;
     height:50px;
 }
+
+/* Dev colors */
+/*
+html {
+    background-color:cyan;
+}
+body {
+    background-color:limegreen;
+}
+section {
+    background-color:yellow;
+}
+*/

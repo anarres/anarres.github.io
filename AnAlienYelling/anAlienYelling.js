@@ -154,13 +154,11 @@ generateImage = function() {
 };
 
 clearImage = function() {
-
     // Remove the image from the DOM
     el = getById("myImage");
     if (el) {
         el.remove();
     }
-
     // Hide the social media div
     hideHTML("socialMedia");
     hideHTML("howToSaveWrapper");
