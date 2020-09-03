@@ -8,11 +8,12 @@ html {
     margin:0px auto;
     font-size:14px;
     font-family: sans-serif;
-    background-color:grey;
+    background-color:#eee;
 }
 body {
     padding:0px 10px;
     background-color:#fff;
+    border-radius:2px;
 
 }
 h1,h2,h3,p,aside,ul,ol,li {
@@ -104,7 +105,7 @@ div#imageGoesHere {
     clear:both;
     background-color:#ddd;
     width:400px;
-    height:400px;
+    height:360px;
     margin:0px auto;
 }
 p.hint {
