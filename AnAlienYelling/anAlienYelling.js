@@ -1,6 +1,6 @@
 naturalWidth = 800;
 naturalHeight = 720;
-scale = 0.5
+scale = 1.0;
 strScale = "" + scale;
 width = parseInt(scale * naturalWidth);
 height = parseFloat(scale * naturalHeight);
