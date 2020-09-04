@@ -136,7 +136,7 @@ getDescription = function() {
     //t5 = getById("text5").value;
     //t6 = getById("text6").value;
     text = t1 + " " + t2 + " " + t3 + " " + t4; // + " " + t5 + " " + t6;
-    template = 'Image description: A cartoon says: TEXT--GOES--HERE';
+    template = 'Image description: A cartoon alien says: TEXT--GOES--HERE';
     desc = template.replace("TEXT--GOES--HERE",text);
     return desc;
 };
