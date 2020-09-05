@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<!--
+
+ * * * Foofurple's HTML5 Simple Fundraising Thermometer * * *
+
+This website / Internet application, comprising the files:
+
+ - index.html
+ - thermometer.js
+ - style.css
+
+is dedicated to the Public Domain and may be freely used by anyone,
+for any purpose.
+
+-->
+
+<title>Make a charity fundraising thermometer image | Foofurple</title>
+<meta name="description" content="Make a charity fundraising thermometer image | Foofurple">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="thermometer.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+
+</head>
+
+<body onload="init()">
+
+<div id="container">
+<h1>Simple fundraising thermometer</h1>
+
+<div id="form">
+
+    <div class="inputRow">
+        <label for="targetAmount">Target amount <span class="hint">(no spaces, commas, or periods please)</span></label>
+        <input type="text" id="targetAmount" size="10" value="100" disabled="disabled">
+    </div>
+
+    <div class="inputRow">
+        <label for="amountSoFar">Amount raised so far <span class="hint">(no spaces, commas, or periods please)</span></label>
+        <input type="text" id="amountSoFar" size="10" value="60" disabled="disabled">
+    </div>
+
+    <div class="inputRow">
+        <label for="jscolor">Color</label>
+        <input type="text" class="color" value="E30B53" id="jscolor" size="8" disabled="disabled">
+    </div>
+
+    <div class="inputRow">
+        <label for="currency">Currency symbol</label>
+        <input type="text" id="currency" size="3" value="&pound" disabled="disabled">
+    </div>
+
+    <div class="inputRow">
+        <label for="targetAmountLabel">Target amount label</label>
+        <input type="text" id="targetAmountLabel" size="20" disabled="disabled">
+    </div>
+
+    <div class="inputRow">
+        <label for="amountSoFarLabel">Amount raised so far label</label>
+        <input type="text" id="amountSoFarLabel" size="20" disabled="disabled">
+    </div>
+
+    <br>
+
+    <div class="inputRow">
+        <button onclick="saveImage()" id="saveImage">SAVE IMAGE</button>
+    </div>
+
+</div> <!--#form-->
+
+<div id="canvasDiv">
+
+    <p id="readyToDownload">To save the image, right-click on it and select "Save image As"</p>
+
+    <canvas id="thermometerImage">
+    </canvas><!--#thermometerImage-->
+
+    <img src="" id="finalImage">
+
+</div> <!--#canvasDiv-->
+
+<div style="height:10px;clear:both;"></div>
+
+<p>
+<strong>Advantages:</strong>
+ you don't need to install anything, just use this website to generate an image, then post that image to your blog / website / social networking page.
+</p>
+<p>
+<strong>Disadvantages:</strong> 
+it doesn't work automatically; everytime you want to increase the 'temperature' level on the thermometer you have to remove the old image from your website, and generate a new image to replace it.
+</p>
+
+
+</div> <!--#container-->
+
+</body>
+</html>
