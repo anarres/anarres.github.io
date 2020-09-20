@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Comic character editor | Foofurple</title>
+    <meta name="description" content="FIXME">
+    <link rel="icon" type="image/svg" href="FIXME">
+    <link type="text/css" media="screen" rel="stylesheet" href="style.css">
+    <script src="jscolor.js"></script>
+    <script src="utils.js"></script>
+    <script type="text/javascript" src="comicCharacters.js"></script>
+    <script type="text/javascript" src="comicFaces.js"></script>
+    <script type="text/javascript" src="comicHairStyles.js"></script>
+</head>
+
+<body onload="init()">
+
+<section id="top">
+    <h1>Comic character editor</h1>
+    <p style="color:red;text-align:center;font-size:0.8em;">(very new and experimental, may not work)</p>
+
+</section>
+
+<section id="svgWrapper">
+<svg 
+    xmlns='http://www.w3.org/2000/svg' 
+    xmlns:xlink='http://www.w3.org/1999/xlink' 
+    width='144' 
+    height='162'>
+<g 
+    transform="scale(1.2,1.2) translate(0,15)"
+    style="
+        stroke:#000000;
+        stroke-width:1;
+        stroke-linejoin:round;
+        stroke-linecap:round">
+<g id="backHair"></g>
+
+<path id="leftLeg" 
+    d="m73.854 79.995 0.563 0.006c7.719 0.091 13.921 1.173 13.906 2.426l-0.376 31.873c-0.015 1.25-6.24 2.19-13.959 2.1l-0.563-0.01c-7.719-0.09-13.921-1.17-13.906-2.43l0.376-31.869c0.015-1.252 6.24-2.187 13.959-2.096z" />
+
+<path id="rightLeg"
+    d="m45.398 79.955 0.564 0.007c7.718 0.091 13.92 1.173 13.906 2.425l-0.377 31.873c-0.014 1.25-6.24 2.19-13.959 2.1l-0.563-0.01c-7.719-0.09-13.921-1.17-13.906-2.42l0.376-31.878c0.015-1.253 6.241-2.188 13.959-2.097z" /> 
+
+<path id="leftShoe" 
+    d="m61.778 118.26c0-3.85 2.668-7.7 6.225-8.89 3.853-1.18 7.41-0.59 11.263 0.3 2.964 0.89 6.225 2.67 7.707 5.63 0.296 0.89 0.889 2.08 0.593 2.96-0.89 0.89-2.075 0.6-2.964 0.89-7.114 0.3-14.524 0.6-21.638-0.29-0.297 0-0.889-0.3-1.186-0.6z" /> 
+
+<path id="rightShoe" 
+    d="m58.222 118.26c0-3.85-2.668-7.7-6.225-8.89-3.853-1.18-7.41-0.59-11.263 0.3-2.964 0.89-6.225 2.67-7.707 5.63-0.296 0.89-0.889 2.08-0.593 2.96 0.89 0.89 2.075 0.6 2.964 0.89 7.114 0.3 14.524 0.6 21.638-0.29 0.297 0 0.889-0.3 1.186-0.6z"/>
+
+<path id="leftHand" 
+    d="m98.155 99.505a4.8227 5.9752 75.257 1 1 -9.586 -4.861 4.8227 5.9752 75.257 0 1 9.586 4.861z"/>
+
+<path id="rightHand" 
+    d="m21.414 99.505a5.9752 4.8227 14.743 1 0 9.586 -4.861 5.9752 4.8227 14.743 0 0 -9.586 4.861z"/> 
+
+<path id="leftArm" 
+    d="m84.982 56.908c10.967-1.482 14.228 25.787 15.708 36.755 0.89 5.631-21.043 8.297-21.932 2.964-1.186-10.967-4.743-38.237 6.224-39.719z"/> 
+
+<path id="rightArm" 
+    d="m35.186 56.908c-10.967-1.482-14.228 25.787-15.71 36.755-0.889 5.631 21.045 8.297 21.934 2.964 1.186-10.967 4.743-38.237-6.224-39.719z"/> 
+
+<path id="torso" 
+    d="m60.148 43.894h-0.297v0h-0.296v0c-6.817 0.593-13.338 4.446-17.488 9.485-9.189 10.67-12.746 24.898-13.042 38.533 0.296 3.557-0.296 7.706 1.186 10.668 5.335 3.26 15.116 3.86 21.637 4.45 1.779 0.29 4.743 0.29 7.707 0.29v0h0.889v0c2.964 0 5.928 0 7.707-0.29 6.521-0.59 16.006-1.19 21.638-4.45 1.482-2.962 0.889-7.111 0.889-10.668-0.297-13.635-3.557-27.863-12.746-38.533-4.149-5.039-10.67-8.892-17.488-9.485v0h-0.296z"/>
+
+<ellipse 
+    id="head" 
+    cx="60" 
+    cy="40" 
+    rx="36" 
+    ry="27.8"/>
+
+<g id="face"></g>
+
+<g id="hair"></g>
+
+<g id="guidelines" fill="red" stroke="none" opacity="0">
+    <!--vertical line thru center-->
+    <rect width="1" height="135" x="59.5" y="0"/>
+    <!--vertical line thru eye-->
+    <rect width="1" height="135" x="46.5" y="0"/>
+    <!--vertical line thru the other eye-->
+    <rect width="1" height="135" x="72.5" y="0"/>
+    <!--horizontal at eye level-->
+    <rect width="120" height="1" x="0" y="39.5"/>
+    <!--horizontal at mouth level-->
+    <rect width="120" height="1" x="0" y="47.5"/>
+</g>
+</svg>
+</section><!--#svgWrapper-->
+
+<section id="hairSection">
+    <h2 class="showHide" id="showHideHair" style="clear:both;">Hair style</h2>
+    <div id="hairScreen" class="noDisplay"></div>
+    <div style="clear:both;"></div>
+</section>
+
+<section id="colorRec">
+<h2 class="showHide" id="showHideColorRecs">Color suggestions</h2>
+    <div id="colorRecsScreen" class="noDisplay">
+        <label>Skin:</label>
+
+        <ul id="skinColorRecs">
+            <li style="background-color:#e0b9a2" id="e0b9a2"></li>
+            <li style="background-color:#dbb99a" id="dbb99a"></li>
+            <li style="background-color:#D5B094" id="D5B094"></li>
+            <li style="background-color:#bf9774" id="bf9774"></li>
+            <li style="background-color:#b58f6f" id="b58f6f"></li>
+            <li style="background-color:#BC906F" id="BC906F"></li>
+            <li style="background-color:#c1946d" id="c1946d"></li>
+            <li style="background-color:#cea388" id="cea388"></li>
+            <li style="background-color:#d0ac86" id="d0ac86"></li>
+            <li style="background-color:#ac8363" id="ac8363"></li>
+            <li style="background-color:#a1765a" id="a1765a"></li>
+            <li style="background-color:#95674A" id="95674A"></li>
+        <div style="clear:both;"></div>
+        </ul>
+        <div style="clear:both;"></div>
+        <label>Hair:</label>
+        <ul id="hairColorRecs">
+            <li style="background-color:#E7D46B" id="E7D46B"></li>  <!--blond-->
+            <li style="background-color:#cda95a" id="cda95a"></li>  <!--blond-->
+            <li style="background-color:#DAA761" id="DAA761"></li>  <!--blond-->
+            <li style="background-color:#B3684E" id="B3684E"></li>  <!--orange-->
+            <li style="background-color:#E26732" id="E26732"></li> 
+            <li style="background-color:#9A5238" id="9A5238"></li>  
+            <li style="background-color:#773d33" id="773d33"></li>  <!--red-brown-->
+            <li style="background-color:#583b30" id="583b30"></li>
+            <li style="background-color:#47352e" id="47352e"></li>  <!--brown-->
+            <li style="background-color:#4a312c" id="4a312c"></li>  <!--brown-->
+            <li style="background-color:#2E211D" id="2E211D"></li>  <!--black-->
+            <li style="background-color:#252a2e" id="252a2e"></li>  <!--black-->
+            <li style="background-color:#252a2e" id="252a2e"></li>  <!--black-->
+            <li style="background-color:#483e37" id="483e37"></li>  <!--dark brown-->
+            <li style="background-color:#67574E" id="67574E"></li>  <!--dark grey-brown-->
+            <li style="background-color:#888884" id="888884"></li>  <!--grey-->
+            <li style="background-color:#C9C9D5" id="C9C9D5"></li>  <!--light grey-->
+            <li style="background-color:#41346E" id="41346E"></li>
+            <li style="background-color:#5A3859" id="5A3859"></li>
+            <li style="background-color:#767C9B" id="767C9B"></li>
+            <li style="background-color:#171F81" id="171F81"></li>
+            <li style="background-color:#75D0C0" id="75D0C0"></li>
+            <li style="background-color:#EE65C9" id="EE65C9"></li>
+            <li style="background-color:#BEEE2D" id="BEEE2D"></li>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</section>
+
+<section>
+    <h2 class="showHide" id="showHideColors">Color changer</h2>
+    <div id="colorsScreen" class="noDisplay">
+        <input class="jscolor" id="colorBox" value="fd0000">
+        <ul id="selectColorToChange">
+            <li>
+                <input type="radio" name="colorOf" id="colorOfSkin" checked>
+                <label for="colorOfSkin">Skin</label></li>
+            <li>
+                <input type="radio" name="colorOf" id="colorOfShirt">
+                <label for="colorOfShirt">Shirt</label></li>
+            <li>
+                <input type="radio" name="colorOf" id="colorOfTrousers">
+                <label for="colorOfTrousers">Trousers</label></li>
+            <li>
+                <input type="radio" name="colorOf" id="colorOfShoes">
+                <label for="colorOfShoes">Shoes</label></li>
+            <li>
+                <input type="radio" name="colorOf" id="colorOfHair">
+                <label for="colorOfHair">Hair</label></li>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</section>
+
+<section>
+    <h2 class="showHide" id="showHideFaces">Faces</h2>
+    <div id="facesScreen" class="noDisplay"></div>
+    <div style="clear:both;"></div>
+</section>
+
+<section>
+    <h2 class="showHide" id="showHideRemember">Save, share, remember</h2>
+    <div id="rememberScreen" class="noDisplay">
+        <button id="svgFoo">Save SVG image</button>
+<!--
+        <button id="pngFoo">Save PNG image</button>
+        <button>SVG - all the hairstyles</button>
+        <button>SVG - all the faces</button>
+        <button>SVG - all the character types</button>
+-->
+    </div>
+</section>
+
+<footer></footer>
+
+</body>
+
+</html>

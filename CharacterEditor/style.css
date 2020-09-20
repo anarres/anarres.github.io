@@ -1,0 +1,144 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+html {
+    font-size:14px;
+    font-family:Helvetica, sans-serif;
+    color:#fff;
+    background-color:#eee;
+    max-width:1000px;
+    margin:0px auto;
+}
+section {
+    max-width:100%;
+    overflow:hidden;
+    color: #222;
+    background-color:#fff;
+    clear:both;
+}
+h1,h2,h3,p{
+    font-size:1em;
+    font-weight:normal;
+    clear:both;
+    padding:5px 10px;
+}
+h1 {
+    font-size:1.8em;
+    text-align:center;
+}
+h2,h3 {
+    font-size:1.3em;
+}
+a {
+    text-decoration:none;
+    color:darkred;
+}
+a:hover {
+    text-decoration:underline;
+}
+li {
+    list-style:none;
+    margin:2px 0px;
+}
+label {
+    font-size:1em;
+    font-weight:normal;
+    margin:5px 10px;
+}
+
+/* Specific styles */
+
+#svgWrapper {
+    text-align:center;
+    height:162px;
+}
+.noDisplay {
+    display:none;
+}
+.highlit {
+    background-color:#B7DD57;
+}
+h2.showHide {
+    width:100%;
+    cursor:pointer;
+    border-top:1px solid grey;
+    color:#fff;
+    background-color:#444;
+}
+h2.showHide:hover {
+    color:#B7DD57;
+    background-color:#333;
+}
+
+/* Hair style */
+
+.hairClicker {
+    float:left;
+    width:110px;
+    height:70px;
+    overflow:hidden;
+    cursor:pointer;
+}
+.hairClicker:hover {
+    background-color:#B7DD57;
+}
+#hairSection p {
+    position:relative;
+    top:-170px;
+    left:5px;
+    font-size:0.7em;
+    font-weight:bold;
+}
+
+/* Color suggestor */
+
+section#colorRec {
+    color: #fff;
+    background-color:#555;
+    clear:both;
+}
+#colorRecsScreen label {
+    display:block;
+    padding:0px;
+    margin:0px 4px;
+    margin-top:4px;
+}
+#colorRecsScreen li {
+    width:40px;
+    height:30px;
+    cursor:pointer;
+    border-radius:1px;
+    border:2px solid #444;
+    display:block;
+    float:left;
+    margin:0px;
+}
+#colorRecsScreen li.highlit {
+    border:2px solid #B7DD57;
+}
+
+/* Color adjustor */
+
+input#colorBox {
+    display:block;
+    border:1px solid grey;
+    min-width:50%;
+    clear:both;
+    margin:0px auto;
+    padding:10px;
+    text-align:center;
+}
+#selectColorToChange li {
+    float:left;
+    margin-left:10px;
+}
+
+/* Faces screen */
+
+#facesScreen li {
+    float:left;
+    margin:0px;
+    padding: 2px 8px;
+    cursor:pointer;
+}
