@@ -88,7 +88,8 @@ aside p {
     font-size:0.8em;
     font-style:italic;
     line-height:1.1em;
-    margin:2px 0px; 
+    margin:0px;
+    margin-bottom:2px;
 }
 
 aside.float200 {
@@ -103,7 +104,6 @@ aside.float400 {
     width:400px;
     float:left;
 }
-
 aside.center200 {
     width:200px;
     margin:0px auto;
