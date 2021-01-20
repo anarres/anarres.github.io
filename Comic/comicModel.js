@@ -74,7 +74,7 @@ model: {
             bubble2: "word",
             leftFace: 15,
             rightFace: 2,
-            text1:"You can use this website to make a comic! Just type in the grey text, then click outside the box.",
+            text1:"You can use this website to make a comic!! Just type in the grey text, then click outside the box.",
             text2: "Try clicking the buttons at the top and at the sides to choose the panel, character, word bubble, or facial expression!"
         },
         {
