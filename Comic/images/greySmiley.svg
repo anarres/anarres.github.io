@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.1"
+     width="54.4375"
+     height="54.9375"
+     id="svg3783">
+    <defs
+         id="defs3785" />
+    <metadata
+         id="metadata3788">
+        <rdf:RDF>
+            <cc:Work
+                 rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <dc:title></dc:title>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <g
+         transform="translate(-347.78125,-504.90625)"
+         id="layer1">
+        <path
+             d="M 399.20452,532.36716 A 24.20452,24.46464 0 0 1 350.79548,532.36716 24.20452,24.464644 0 1 1 399.20452,532.36716 z"
+             id="path2386"
+             style="fill:#9f9f9f;fill-opacity:1;stroke:#4a4a4a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+             d="M 357.71107,532.36716 C 357.71107,543.94242 365.45651,549.84189 375.00001,549.84189 384.5435,549.84189 392.28894,543.94242 392.28894,532.36716 H 357.71107 z"
+             id="path3158"
+             style="fill:#9f9f9f;fill-opacity:1;stroke:#4a4a4a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+             d="M 361.16886,525.37726 C 361.16886,518.38737 371.54222,518.38737 371.54222,525.37726"
+             id="path3163"
+             style="fill:#9f9f9f;fill-opacity:1;stroke:#4a4a4a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+             d="M 378.45779,525.37726 C 378.45779,518.38737 388.83115,518.38737 388.83115,525.37726"
+             id="path3165"
+             style="fill:#9f9f9f;fill-opacity:1;stroke:#4a4a4a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+</svg>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Comic</title>
+<meta name="description" content="Make your own web comic! 
+Select characters, create your own dialog, then save your 
+comic as a .png or .svg image to share with others.">
+<link rel="icon" type="image/svg" href="">
+<link type="text/css" media="screen" rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="comicModel.js"></script>
+<script type="text/javascript" src="comicControllers.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<script type="text/javascript" src="characters.js"></script>
+<script type="text/javascript" src="comicSVG.js"></script>
+</head>
+
+<body onload="COMIC.init()">
+
+<div id="goesbehindWrapper">
+    <div id="goesBehind">
+    </div>
+</div>
+
+<div id="container">
+
+<div id="screen1" class="current">
+
+    <div id="test1">
+
+        <div id="titleWrapper">
+            <img src="images/FoofurpleCOMIC.svg" 
+                alt="Foofurple COMIC" 
+                class="titleImage">
+            <p>panel
+                <span id="panelNum" 
+                    title="Current panel" 
+                    class="excitingText">1</span>
+                of 
+                <span id="totalPanelCount" 
+                    class="excitingText">2</span>
+            </p>
+            <button id="decreasePanelNum" 
+                title="Go to the previous panel" 
+                class="notGreyedOut"></button>
+            <button id="increasePanelNum" 
+                title="Go to the next panel" 
+                class="notGreyedOut"></button>
+            <button id="newPanel" 
+                title="Create a new panel"></button>
+            <button id="deletePanel" 
+                title="Delete the current panel" 
+                class="notGreyedOut"></button> 
+        </div><!--#titleWrapper-->
+
+       <div id="colorButton">
+            <input type="text" class="color" value="AAE3E3" id="jscolor" size="6" >
+        </div>
+        <div style="clear:both;"></div>
+
+    </div><!--#test1-->
+
+    <div id="typeHere">
+        <div class="halfBox">
+            <div class="textareaWrapper" 
+                    id="textareaWrapper1">
+                <textarea id="character1Text"></textarea>
+            </div>
+        </div>
+        <div class="halfBox">
+            <div class="textareaWrapper">
+                <textarea id="character2Text"></textarea>
+            </div>
+        </div> 
+    </div><!--#typeHere-->
+
+    <div id="previewWrapper">
+        <div class="floatyPreviewButtons">
+            <div id="previewButtonSet1">
+                <button id="selectChar1" title="Select character 1" class="selected"></button>
+                <br>
+                <button id="bubble1" title="Word bubbles"></button>
+                <br>
+                <button id="showFaces1" title="Expressions" class="notGreyedOut"></button>
+                <br>
+                <button id="imageFormatPNG" class="selected" title="Image format: PNG">PNG</button>
+                <br>
+                <button id="imageFormatSVG" title="Image format: SVG">SVG</button>
+                <br>
+                <button id="saveImage" title="Generate comic image!"></button>
+            </div>
+            <div id="previewButtonSet2">
+                <button id="selectChar2" title="Select character 2"></button>
+                <br>
+                <button id="bubble2" title="Word bubbles"></button>
+                <br>
+                <button id="showFaces2" title="Expressions" class="notGreyedOut"></button>
+                <br>
+                <a href="faq.html">
+                    <img src="images/info.svg" alt="info" class="buttonlike" title="FAQ">
+                </a>
+            </div>
+        </div><!--.floatyPreviewButtons-->
+        <div id="svgGoesHere"></div>
+    </div><!--#previewWrapper-->
+</div><!--#screen1-->
+
+<div id="screen2">
+    <div id="backFrom2Wrapper">
+        <button id="backFrom2" 
+            title="Back to comic"></button>
+    </div>
+    <h2>Select character
+        <span id="charNum" class="h2ish">1</span>
+    </h2>
+    <div id="selectCharacters">
+        <div id="leftCharactersGoHere"></div>
+        <div style="clear:both;"></div>
+    </div>
+</div><!--#screen2-->
+
+<div id="screen3">
+    <div id="backFrom3Wrapper">
+        <button id="backFrom3" 
+                title="Back to comic"></button>
+    </div>
+    <h2>Your image should appear in a few moments...</h2>
+    <div id="descriptionWrapper">
+        <p id="description"></p>
+    </div>
+    <p>Once the image appears, you should be able to right 
+        click then 'Save as' to save it to your device.</p>
+    <div id="imageGenerationFoo">
+        <div id="imageContainer">
+            <div id="imageGoesHere"></div>
+        </div> <!-- #imageContainer -->
+    </div> <!-- #imageGenerationFoo -->
+</div><!--#screen3-->
+
+</div> <!--#container-->
+
+<div id="hiddenSVG" style="display:none;"></div>
+
+</body>
+</html>

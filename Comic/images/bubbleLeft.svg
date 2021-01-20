@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg"
+     version="1.0"
+     width="100%"
+     height="100%"
+     viewBox="0 0 60 60"
+     id="svg1">
+    <defs
+         id="defs10" />
+    <metadata
+         id="metadata8">
+        <rdf:RDF>
+            <cc:Work>
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                     rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                <cc:license
+                     rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+                <dc:publisher>
+                    <cc:Agent
+                         rdf:about="http://openclipart.org/">
+                        <dc:title>Openclipart</dc:title>
+                    </cc:Agent>
+                </dc:publisher>
+                <dc:title></dc:title>
+            </cc:Work>
+            <cc:License
+                 rdf:about="http://creativecommons.org/licenses/publicdomain/">
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Reproduction" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Distribution" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+            </cc:License>
+        </rdf:RDF>
+    </metadata>
+    <path
+         d="M 29.470579,7.0157256 C 18.080957,7.2046577 8.0359408,13.749168 5.9047808,23.03319 3.4682268,33.644127 12.282882,43.833265 25.58396,45.777506 L 25.717981,45.770906 25.790481,45.832416 25.489483,45.843396 44.379914,55 36.723115,45.349098 C 45.920066,43.255465 52.370671,37.591903 54.095372,30.082961 56.531926,19.472024 47.712876,9.282887 34.4118,7.3386465 32.748616,7.0947926 31.096418,6.9915392 29.470584,7.0200985 z M 36.67478,45.351311 H 36.70334 V 45.401841 L 36.67478,45.351311 z"
+         id="path4"
+         style="fill:#d0f1de;fill-opacity:1;fill-rule:evenodd;stroke:#222222;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+</svg>
