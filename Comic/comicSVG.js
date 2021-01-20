@@ -209,13 +209,27 @@ COMIC.svg = {
         svg += "</g>";
         return svg;
     },
+
+
+
+
+
     bottom: function() {
         var y = COMIC.model.madeAtY();
         var bar = "<text font-size='10' fill='grey' x='10' y='";
         bar += y;
-        bar += "'>made at foofurple.org</text></svg>";
+        bar += "'>";
+        bar += COMIC.constants.bottomText;
+        bar += "</text></svg>";
         return bar;
     },
+
+
+
+
+
+
+
     preview: function() {
         var i = COMIC.model.currentPanelIndex;
         var svg = COMIC.svg.previewTop();

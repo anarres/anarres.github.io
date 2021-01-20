@@ -17,14 +17,17 @@ constants: {
     panelWidth: 400,
     panelHeight: 266,
     spaceBetweenPanels: 10,
+
+    // FIXME rename this to verticalSpaceAbovePanel
     comicVerticalSpace: 10,
     previewVerticalSpace: 0,
+
+    // FIXME rename this to panelHorizontalSpace
     comicHorizontalSpace: 10,
     previewHorizontalSpace: 0,
     comicBackgroundColor: 'fff',
-    creditsColor: '444',  
-    creditsMaxLineLength: 60,
-    metadataHeight: 40,
+    creditsColor: '444',
+    metadataHeight: 25,
 
     // Characters
     character1X: 45,
@@ -51,7 +54,9 @@ constants: {
     maxLineLength: 20,
     maxNumLines: 7,
     lineHeight: 17,
-    textStyle: "font-family='Arial, sans-serif' font-size='14px' stroke='none'"
+    textStyle: "font-family='Arial, sans-serif' font-size='14px' stroke='none'",
+
+    bottomText: "Made at https://anarres.github.io/Comic/"
 
 },      // End of COMIC.constants
 
@@ -89,12 +94,29 @@ model: {
 
     comicHeight: function() {
         n = COMIC.model.panels.length;
-        return n * (2*COMIC.constants.comicVerticalSpace + COMIC.constants.panelHeight) + COMIC.constants.metadataHeight;
+        return n*(COMIC.constants.panelHeight + COMIC.constants.comicVerticalSpace) + COMIC.constants.metadataHeight;
+
+
+        //return n * (2*COMIC.constants.comicVerticalSpace + COMIC.constants.panelHeight) + COMIC.constants.metadataHeight;
     },
+
+
+
+
+
+
+
     madeAtY: function() {
+        // FIXME
         var foo = COMIC.model.comicHeight();
-        return foo-30;
+        return foo-10;
     },
+
+
+
+
+
+
 
     getChar1: function() {
         return COMIC.characters[COMIC.model.character1Index];
