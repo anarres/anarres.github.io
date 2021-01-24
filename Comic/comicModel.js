@@ -54,7 +54,10 @@ constants: {
     maxLineLength: 20,
     maxNumLines: 7,
     lineHeight: 17,
-    textStyle: "font-family='Arial, sans-serif' font-size='14px' stroke='none'",
+
+    // FIXME for some reason this controls the download version but not the website version!
+    // It works for now because (I think) the correct style is being inherited from the website style    
+    textStyle: "font-family='Arial, sans-serif' font-size='16px' stroke='none'",
 
     bottomText: "Made at https://anarres.github.io/Comic/"
 

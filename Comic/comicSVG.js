@@ -210,10 +210,6 @@ COMIC.svg = {
         return svg;
     },
 
-
-
-
-
     bottom: function() {
         var y = COMIC.model.madeAtY();
         var bar = "<text font-size='10' fill='grey' x='10' y='";
@@ -223,12 +219,6 @@ COMIC.svg = {
         bar += "</text></svg>";
         return bar;
     },
-
-
-
-
-
-
 
     preview: function() {
         var i = COMIC.model.currentPanelIndex;
@@ -260,6 +250,7 @@ COMIC.svg = {
         var svgFoo = template.replace(/INSERT/g, insert);
         return svgFoo;
     },
+
     devSeeAllCharacters: function()  {
         var n = COMIC.characters.length;
         for (var i=0; i<n; i++) {
@@ -271,7 +262,6 @@ COMIC.svg = {
         document.write(html);
     }
 };
-
 
 COMIC.svg.getBeforeBit = function(n) {
     for(var i=0; i<COMIC.svg.beforeBits.length; i++) {
