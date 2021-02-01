@@ -18,12 +18,9 @@ constants: {
     panelHeight: 266,
     spaceBetweenPanels: 10,
 
-    // FIXME rename this to verticalSpaceAbovePanel
-    comicVerticalSpace: 10,
+    verticalSpaceAbovePanel: 10,
     previewVerticalSpace: 0,
-
-    // FIXME rename this to panelHorizontalSpace
-    comicHorizontalSpace: 10,
+    panelHorizontalSpace: 10,
     previewHorizontalSpace: 0,
     comicBackgroundColor: 'fff',
     creditsColor: '444',
@@ -92,34 +89,18 @@ model: {
     currentPanelIndex: 0,
 
     comicWidth: function() {
-        return COMIC.constants.panelWidth + 2 * COMIC.constants.comicHorizontalSpace;
+        return COMIC.constants.panelWidth + 2 * COMIC.constants.panelHorizontalSpace;
     },
 
     comicHeight: function() {
         n = COMIC.model.panels.length;
-        return n*(COMIC.constants.panelHeight + COMIC.constants.comicVerticalSpace) + COMIC.constants.metadataHeight;
-
-
-        //return n * (2*COMIC.constants.comicVerticalSpace + COMIC.constants.panelHeight) + COMIC.constants.metadataHeight;
+        return n*(COMIC.constants.panelHeight + COMIC.constants.verticalSpaceAbovePanel) + COMIC.constants.metadataHeight;
     },
 
-
-
-
-
-
-
     madeAtY: function() {
-        // FIXME
         var foo = COMIC.model.comicHeight();
         return foo-10;
     },
-
-
-
-
-
-
 
     getChar1: function() {
         return COMIC.characters[COMIC.model.character1Index];

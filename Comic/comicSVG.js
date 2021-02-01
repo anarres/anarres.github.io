@@ -229,10 +229,10 @@ COMIC.svg = {
     },
     fullComic: function() {
         var svg = COMIC.svg.top();
-        var x = COMIC.constants.comicHorizontalSpace;
+        var x = COMIC.constants.panelHorizontalSpace;
         numPanels = COMIC.model.panels.length;
         for (var i=0; i<numPanels; i++) {
-            var y = COMIC.constants.comicVerticalSpace*(1+i) + COMIC.constants.panelHeight*i;
+            var y = COMIC.constants.verticalSpaceAbovePanel*(1+i) + COMIC.constants.panelHeight*i;
             var temp = "<g class='PANEL' transform='translate(X-TRANSFORM,Y-TRANSFORM)'>";
             temp = temp.replace(/X-TRANSFORM/g, x);
             temp = temp.replace(/Y-TRANSFORM/g, y);
