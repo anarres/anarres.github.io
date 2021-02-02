@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<script type="text/javascript">
+
+    function doTheThing() {
+        source = new Image();
+        //source.crossOrigin = "anonymous";  // This enables CORS
+        source.src = 'foofurpleLogo.svg';
+        source.onload = function(event){
+            try {
+                c = document.getElementById('canvas');
+                ctx = c.getContext('2d');
+                ctx.drawImage(source,0,0,116,23);
+                data = c.toDataURL('image/svg', 1.0);
+                alert(data);
+            } catch (e) {
+                alert(e);
+            }
+        };
+    }
+
+</script>
+</head>
+
+<body onload='doTheThing()'>
+    <canvas id='canvas' style='background-color:red' width='116' height='23'>
+</body>
+</html>
