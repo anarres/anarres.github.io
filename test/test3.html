@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<script type="text/javascript">
+
+async function getText(file) {
+    let x = await fetch(file);
+    let y = await x.text();
+    console.log(y);
+}
+
+function doTheThing() {
+    getText("foofurpleLogo.svg");
+}
+
+</script>
+</head>
+
+<body onload='doTheThing()'>
+
+<h1>test</h1>
+
+</body>
+</html>
