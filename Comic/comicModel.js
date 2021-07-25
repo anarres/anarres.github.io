@@ -56,7 +56,9 @@ constants: {
     // It works for now because (I think) the correct style is being inherited from the website style    
     textStyle: "font-family='Arial, sans-serif' font-size='16px' stroke='none'",
 
-    bottomText: "Made at https://anarres.github.io/Comic/"
+    bottomTextStyle: "font-family='Arial, sans-serif' font-size='13px' stroke='none'",
+
+    bottomText: "Make your own at at https://anarres.github.io/Comic/"
 
 },      // End of COMIC.constants
 

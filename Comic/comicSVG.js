@@ -212,7 +212,9 @@ COMIC.svg = {
 
     bottom: function() {
         var y = COMIC.model.madeAtY();
-        var bar = "<text font-size='10' fill='grey' x='10' y='";
+        var bar = "<text ";
+        bar += COMIC.constants.bottomTextStyle;
+        bar += " x='10' y='";
         bar += y;
         bar += "'>";
         bar += COMIC.constants.bottomText;
