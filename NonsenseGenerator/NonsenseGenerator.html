@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.5">
+<link rel="icon" href="FIXME" type="image/svg" sizes="64x64">
+<title>NonsenseGenerator</title>
+<meta name="description" content="FIXME">
+<link type="text/css" media="screen" rel="stylesheet" href="style.css">
+
+<style>
+
+* {
+    margin:0px;
+    padding:0px;
+}
+html {
+    font-size:16px;
+    font-family:Helvetica, sans-serif;
+    width:100%;
+    max-width:1000px;
+    margin:0px auto;
+}
+body {
+    margin:0px 10px;
+}
+
+h1,h2,h3,p{
+    font-size:1em;
+    font-weight:normal;
+    clear:both;
+    padding:5px 0px;
+}
+h1 {
+    font-size:1.8em;
+    text-align:center;
+}
+h2,h3 {
+    font-size:1.3em;
+}
+a {
+    text-decoration:none;
+    color:darkred;
+}
+a:hover {
+    text-decoration:underline;
+}
+button {
+    cursor:pointer;
+    padding:2px 4px;
+}
+#delay {
+    font-weight:bold;
+}
+#startButton {
+    width:100%;
+    margin-top:6px;
+    font-size:1.4em;
+}
+#nonsense {
+    background-color:#e5ff80;
+    font-size:4em;
+    text-align:center;
+    min-height:100px;
+    margin:2px 0px;
+}
+
+</style>
+
+<script>
+
+// Global vars
+running = false;
+interval = null;
+delay = 3.0;        // Delay in seconds
+numSyl = 5;
+
+vowels = [
+    'aw',
+    'oh',
+    'ih',
+    'ee',
+    'ah',
+    'oo',
+    'oi',
+    'uh',
+    'ow',
+    'ay',
+    'uh',
+    'eh',
+    'eye'
+];
+
+consonants = [
+    'b',
+    'ch',
+    'd',
+    'f',
+    'g',
+    'h'
+];
+
+// Takes an int array length and returns a random array index
+// Math.random() returns a decimal between 0 and 1
+// Math.floor() rounds down to the nearest integer
+pickRandom = function(l) {
+    return Math.floor(Math.random() * l);
+};
+
+function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
+}
+getById = function(id) {
+    return document.getElementById(id);
+};
+
+vowelsInfo = function() {
+    getById("vowelList").innerHTML = vowels;
+};
+
+consonantsInfo = function() {
+    getById("consonantList").innerHTML = consonants;
+};
+
+delayInfo = function() {
+    getById("delay").innerHTML = delay;
+};
+
+faster = function() {
+    if (delay > 0.4) {
+        delay -= 0.2;
+        delay = round(delay,1);
+    }
+    delayInfo();
+};
+
+slower = function() {
+    if (delay < 12.0) {
+        delay += 0.2;
+        delay = round(delay,1);
+    }
+    delayInfo();
+};
+
+updateNumSyl = function() {
+    e = getById('numSyl');
+    numSyl =  parseInt(e.value);              // numSyl is a global var
+}
+
+getNonsense = function() {
+    ns = "";
+    for (i=0; i<numSyl; i++) {              // numSyl is a global var
+
+        c = pickRandom(consonants.length);
+        ns += consonants[c];   
+
+        v = pickRandom(vowels.length);
+        ns += vowels[v];
+        ns += " ";
+    }
+    return ns;
+};
+
+updateNonsense = function() {
+    ns = getNonsense();
+    getById("nonsense").innerHTML = ns;
+};
+
+start = function() {
+    running = true;
+    getById("startButton").innerHTML = "STOP";
+    updateNumSyl();
+    updateNonsense();
+    interval = setInterval(updateNonsense, delay*1000)
+};
+
+stop = function() {
+    running = false;
+    getById("startButton").innerHTML = "START";
+    clearInterval(interval);
+    getById("nonsense").innerHTML = "";
+};
+
+stopOrStart = function() {
+    if (running) { stop(); }
+    else { start(); }
+}
+
+init = function() {
+    vowelsInfo();
+    consonantsInfo();
+    delayInfo();
+
+};
+
+</script>
+
+</head>
+
+<body onload="init()">
+
+<h1 id="foo">NonsenseGenerator</h1>
+
+<p>Syllables per phrase: 
+    <select name="numSyl" id="numSyl">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+</p>
+
+<p>
+    Delay: <span id="delay"></span> seconds
+    <button id="slower" onclick="slower()">Slower</button>
+    <button id="faster" onclick="faster()">Faster</button>
+    <button id="startButton" onclick="stopOrStart()">START</button>
+</p>
+
+<p id="nonsense"></p>
+
+<p>
+    The vowels are: <span id="vowelList"></span>.
+</p>
+<p>
+    The consonants are: <span id="consonantList"></span>.
+</p>
+
+</body>
+
+</html>
+
