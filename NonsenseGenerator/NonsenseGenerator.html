@@ -51,6 +51,9 @@ button {
     cursor:pointer;
     padding:2px 4px;
 }
+#controls {
+    opacity:1;
+}
 #delay {
     font-weight:bold;
 }
@@ -74,7 +77,7 @@ button {
 // Global vars
 running = false;
 interval = null;
-delay = 3.0;        // Delay in seconds
+delay = 4.0;        // Delay in seconds
 numSyl = 5;
 
 vowels = [
@@ -99,7 +102,40 @@ consonants = [
     'd',
     'f',
     'g',
-    'h'
+    'h',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'p',
+    'r',
+    's',
+    't',
+    'th',
+    'v',
+    'w',
+    'y',
+    'z',
+    'zh',
+
+    'bl',
+    'fl',
+    'gl',
+    'kl',
+    'pl',
+    'sl',
+
+    'br',
+    'dr',
+    'fr',
+    'gr',
+    'kr',
+    'pr',
+    'tr',
+
+    'st',
+    'str',
 ];
 
 // Takes an int array length and returns a random array index
@@ -172,16 +208,19 @@ updateNonsense = function() {
 start = function() {
     running = true;
     getById("startButton").innerHTML = "STOP";
+    getById("controls").style.opacity = "0.2";
     updateNumSyl();
     updateNonsense();
-    interval = setInterval(updateNonsense, delay*1000)
+    interval = setInterval(updateNonsense, delay*1000);
 };
 
 stop = function() {
     running = false;
     getById("startButton").innerHTML = "START";
+    getById("controls").style.opacity = "1";
     clearInterval(interval);
     getById("nonsense").innerHTML = "";
+
 };
 
 stopOrStart = function() {
@@ -204,31 +243,38 @@ init = function() {
 
 <h1 id="foo">NonsenseGenerator</h1>
 
-<p>Syllables per phrase: 
-    <select name="numSyl" id="numSyl">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-    </select>
-</p>
+<div id="controls">
 
-<p>
-    Delay: <span id="delay"></span> seconds
-    <button id="slower" onclick="slower()">Slower</button>
-    <button id="faster" onclick="faster()">Faster</button>
-    <button id="startButton" onclick="stopOrStart()">START</button>
-</p>
+    <p>Syllables per phrase: 
+        <select name="numSyl" id="numSyl">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </p>
+
+    <p>
+        Delay: <span id="delay"></span> seconds
+        <button id="slower" onclick="slower()">Slower</button>
+        <button id="faster" onclick="faster()">Faster</button>
+    </p>
+</div><!--#controls-->
+
+<button id="startButton" onclick="stopOrStart()">START</button>
 
 <p id="nonsense"></p>
+
+<br>
+<br>
 
 <p>
     The vowels are: <span id="vowelList"></span>.
